@@ -1,9 +1,12 @@
+import { Home } from "./homepage";
+import { Layout } from "./shared/layout";
+
 const App: React.FC = () => {
   return (
-    <div>
+    <Layout>
       {/* Complete the exercise here. */}
-      Hello World
-    </div>
+      <Home />
+    </Layout>
   );
 };
 
