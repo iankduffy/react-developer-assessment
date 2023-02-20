@@ -1,9 +1,8 @@
 import { createServer } from 'miragejs';
 import { getAllAuthors } from '../lib/get-all-authors';
+import { getAllCategories } from '../lib/get-all-categories';
 
 import data from './data.json';
-
-// const filterableAttributes = ['author', 'categories']
 
 createServer({
   routes() {
@@ -20,23 +19,14 @@ createServer({
 
     this.get('/posts/filterableAttributes', async () => {
       const allAuthors = await getAllAuthors(data.posts)
+      const allCategories = await getAllCategories(data.posts)
+
+      console.log(allCategories)
 
       const filters = {
-        'Authors': allAuthors
+        'Categories': allCategories,
+        'Authors': allAuthors,
       }
-
-      // Loop thought Filterable Attributes - 
-
-      // for (const attribute of filterableAttributes) {
-      //   const items = data.posts.map((post, index) => {
-
-      //     console.log(post[attribute])
-      //     return post[attribute]
-      //   })
-
-      //   console.log()
-      //   filterable.push(items)
-      // }
 
       return filters;
     });

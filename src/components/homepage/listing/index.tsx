@@ -1,7 +1,9 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import { Filters } from './filters'
 import styled from 'styled-components'
 import { ArticleListing } from './articles'
+import { postStore } from '../../../store/posts'
+
 
 const Container = styled.div`
 	max-width: 1300px;
@@ -12,8 +14,12 @@ const Container = styled.div`
   grid-template-columns: 1fr 4fr;
 `
 
-
 export function Listing(): JSX.Element {
+  const { getPosts, query } = postStore((e) => e)
+
+  useEffect(() => {
+    getPosts(query)
+  }, [])
 
   return (
     <Container>

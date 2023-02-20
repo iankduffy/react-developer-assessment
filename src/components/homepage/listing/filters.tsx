@@ -1,5 +1,9 @@
 // We need a api root to get all authors and all categories
 import styled from 'styled-components'
+import { useFetch } from '../../../hooks/use-fetch'
+// import { useAsync } from "react-async"
+
+
 
 const FiltersForm = styled.form`
 	display: flex; 
@@ -18,9 +22,8 @@ const Heading = styled.h3`
 `
 
 export function Filters(): JSX.Element {
-	const data = fetch('/api/posts/filterableAttributes').then(res => res.json())
-
-	console.log(data)
+	// const {data, loading, error} = useFetch<new Promise<{ data: null; loading: boolean; error: null} >('/api/posts/filterableAttributes')
+	// console.log(data, loading, errors)
 	return (
 		<aside>
 			<FiltersForm>
