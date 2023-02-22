@@ -1,5 +1,7 @@
+import type { PostType } from "types/post";
+
 // {post}: {post: Record<string, unknown>}
-export function Post ({title, author}): JSX.Element {
+export function Post ({title, author} : PostType): JSX.Element {
   return (
     <div>
       <h3>{title}</h3>

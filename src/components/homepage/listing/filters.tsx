@@ -1,9 +1,6 @@
 // We need a api root to get all authors and all categories
+import { filtersStore } from 'store/filters'
 import styled from 'styled-components'
-import { useFetch } from '../../../hooks/use-fetch'
-// import { useAsync } from "react-async"
-
-
 
 const FiltersForm = styled.form`
 	display: flex; 
@@ -22,18 +19,25 @@ const Heading = styled.h3`
 `
 
 export function Filters(): JSX.Element {
-	// const {data, loading, error} = useFetch<new Promise<{ data: null; loading: boolean; error: null} >('/api/posts/filterableAttributes')
-	// console.log(data, loading, errors)
+	const { allFilters = [] } = filtersStore(e => e)
+
+
 	return (
 		<aside>
 			<FiltersForm>
-				<Filter>
-					<Heading>Categories</Heading>
-					<label><input type="checkbox"/>Name</label>
-					<label><input type="checkbox"/>Name</label>
-					<label><input type="checkbox"/>Name</label>
-					<label><input type="checkbox"/>Name</label>
-				</Filter>
+				{allFilters?.map((filters, key) => {
+					const {items} = filters
+					return (			
+						<Filter key={key}>				
+							<Heading>{filters.name}</Heading>
+							{items.map((item, key) => {
+								return (
+									<label key={key}><input type="checkbox"/>{item}</label>
+								)
+							})}
+						</Filter>
+					)
+				})}
 			</FiltersForm>
 		</aside>
 	)

@@ -1,14 +1,15 @@
 import styled from 'styled-components'
 
-
 const Container = styled.div`
 	max-width: 1300px;
-	margin: 0 auto;
+	margin: 10px auto;
 	width: 100%;
 	padding: 10px 0;
+	text-align: center;
 `
 const Paragraph = styled.p`
 	max-width: 800px;
+	margin: 0 auto;
 `
 
 export function TopSection(): JSX.Element {

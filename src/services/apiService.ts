@@ -2,7 +2,7 @@ import { queryToString } from "../lib/query-string";
 
 interface IGet {
   url: string;
-  query?: Record<string, any>;
+  query?: Record<string, string>;
 }
 
 const get = async <T>({ url, query = {} }: IGet): Promise<T> => { 
