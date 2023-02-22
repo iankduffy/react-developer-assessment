@@ -3,7 +3,7 @@ import { createJSONStorage, persist } from 'zustand/middleware';
 
 export interface FiltersStore {
   isLoading: boolean
-  allFilters: Record<string, unknown[]>[]
+  allFilters: Record<string, string[]>[]
   error: unknown
   getAllFilters: () => void
 }
@@ -18,7 +18,7 @@ export const filtersStore = create<FiltersStore>()(
         try {
           set(() => ({ isLoading: true }))
           const data = await fetch('/api/posts/filterableAttributes')
-          const allFilters: Record<string, unknown[]>[] = await data.json()
+          const allFilters: Record<string, string[]>[] = await data.json()
           set(() => ({ allFilters, isLoading: false }))
         } catch (err) {
           console.log(err)

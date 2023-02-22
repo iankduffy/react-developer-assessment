@@ -41,6 +41,7 @@ export const postStore = create<PostStore>()(
             url: '/api/posts', 
             query
           })
+          console.log({posts})
           set(() => ({ posts, totalPages, currentPage, query, isLoading: false }))
         } catch (err) {
           console.log(err)

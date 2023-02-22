@@ -1,3 +1,4 @@
+import { getFilteredPosts } from 'lib/get-filtered-posts';
 import { createServer } from 'miragejs';
 import { paginate } from '../lib/array-paginate';
 import { getAllAuthors } from '../lib/get-all-authors';
@@ -10,12 +11,10 @@ createServer({
     this.namespace = 'api';
 
     this.get('/posts', async (schema, request) => {
-      const { page = 1, per_page = 10 } = request.queryParams
-      const filtersPosts = 40
-      const paginatedPosts = await paginate(data.posts, Number(per_page), Number(page) - 1)
-      const totalPages = Math.ceil(filtersPosts / per_page)
-
-      console.log({totalPages})
+      const { page = 1, per_page = 10, categories = null, authors = null } = request.queryParams
+      const filtersPosts = await getFilteredPosts({categories, authors, posts: data.posts})
+      const paginatedPosts = await paginate(filtersPosts, Number(per_page), Number(page) - 1)
+      const totalPages = Math.ceil(filtersPosts.length / per_page)
 
       const postsResponse= {
         posts: paginatedPosts, 

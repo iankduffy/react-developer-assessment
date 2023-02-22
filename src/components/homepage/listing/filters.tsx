@@ -1,4 +1,5 @@
 // We need a api root to get all authors and all categories
+import { useFilters } from 'hooks/use-filters'
 import { filtersStore } from 'store/filters'
 import styled from 'styled-components'
 
@@ -20,7 +21,7 @@ const Heading = styled.h3`
 
 export function Filters(): JSX.Element {
 	const { allFilters = [] } = filtersStore(e => e)
-
+	const { addFilter } = useFilters()
 
 	return (
 		<aside>
@@ -31,8 +32,12 @@ export function Filters(): JSX.Element {
 						<Filter key={key}>				
 							<Heading>{filters.name}</Heading>
 							{items.map((item, key) => {
+								
 								return (
-									<label key={key}><input type="checkbox"/>{item}</label>
+									<label key={key}>
+										<input type="checkbox" onClick={() => addFilter({type: filters.name.toString(), value: item})}/>
+										{item}
+									</label>
 								)
 							})}
 						</Filter>
