@@ -22,11 +22,9 @@ export const getFilteredPosts = ({categories, authors, posts}: FilteredPost) => 
     if (!selectedCategories.length) return filteredByAuthor
     // transform filtered post to categories
     const allPostCategories = post.categories.map(cat => cat.name.replaceAll(' ', '-').toLowerCase())
-    console.log(allPostCategories)
 
     // return all post
     return selectedCategories.every(cat => {
-      console.log(allPostCategories.includes(cat))
       return allPostCategories.includes(cat)
     })
   })

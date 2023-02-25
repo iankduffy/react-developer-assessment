@@ -1,5 +1,5 @@
 import { useEffect } from 'react'
-import { Filters } from './filters'
+import { Filters } from '../filters'
 import styled from 'styled-components'
 import { ArticleListing } from './articles'
 import { postStore } from '../../../store/posts'

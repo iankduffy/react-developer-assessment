@@ -2,6 +2,7 @@
 import { useFilters } from 'hooks/use-filters'
 import { filtersStore } from 'store/filters'
 import styled from 'styled-components'
+import { Checkbox } from './checkbox'
 
 const FiltersForm = styled.form`
 	display: flex; 
@@ -34,10 +35,7 @@ export function Filters(): JSX.Element {
 							{items.map((item, key) => {
 								
 								return (
-									<label key={key}>
-										<input type="checkbox" onClick={() => addFilter({type: filters.name.toString(), value: item})}/>
-										{item}
-									</label>
+									<Checkbox filterType={filters.name.toString()} value={item} />
 								)
 							})}
 						</Filter>

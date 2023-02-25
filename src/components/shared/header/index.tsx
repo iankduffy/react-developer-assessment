@@ -16,7 +16,7 @@ const Container = styled.div`
 `
 
 export function Header(): JSX.Element {
-	console.log(logo)
+	// console.log(logo)
 	return (
 		<HeaderDiv>
 			<Container>
