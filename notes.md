@@ -8,12 +8,19 @@ First time using styled components, compared to using tailwind, CSS modules or S
 
 ### State Mangagement 
 
-I decided to use Zustand for state management, which I not used before but definitiy enjoyed using for this task. 
+I decided to use Zustand for state management, which I not used before but definitiy enjoyed using for this task, the stores can be found at `/stores`, 
+these would interact with the api and the front end to get posts and filters to appear. 
+
+### Hooks
+
+Added two hooks usePagination and useFilters, these interacted with the stores and the url to add params to url for peristences
 
 ### API 
 
 Made changes to the API for the logic for pagniation and categories, this could also have been filtered on the client side app. 
 Add two new routes to get post by ID and get filters. 
+
+### 
 
 ### What I do Differently 
 
