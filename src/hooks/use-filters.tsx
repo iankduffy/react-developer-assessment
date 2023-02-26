@@ -8,6 +8,7 @@ export const useFilters = () => {
     const current = params.get(type.toLowerCase().replaceAll(' ', '-'))?.split(',') || []
     current.push(value.toLowerCase().replaceAll(' ', '-'))
     params.set(type.toLowerCase(), current.join(','))
+    params.set('page', '1')
     const query = Object.fromEntries(params)
     getPosts(query)
   }
@@ -24,7 +25,7 @@ export const useFilters = () => {
     } else {
       params.delete(type.toLowerCase())
     }
-    
+    params.set('page', '1')
     const query = Object.fromEntries(params)
     getPosts(query)
   }

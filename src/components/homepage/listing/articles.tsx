@@ -1,8 +1,6 @@
-import { PostStore, postStore } from "../../../store/posts";
 import { Pagination } from "../pagination";
-import { Post } from "../posts";
-import { SortBy } from "../sortby";
 import styled from "styled-components"
+import { PostListing } from "../post-listing";
 
 const Flex = styled.div`
   display: flex; 
@@ -12,19 +10,13 @@ const Flex = styled.div`
 
 // Todo: add types
 export function ArticleListing (): JSX.Element {
-  const { posts = [] } = postStore<PostStore>((e) => e)
 
   return (
     <section>
       <Flex>
         <Pagination />
-        <SortBy />
       </Flex>
-      <div>
-        {posts.map(post => {
-          return <Post {...post} key={post.id}/>
-        })}
-      </div>
+      <PostListing />
     </section>
   )
 }

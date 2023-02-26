@@ -22,7 +22,6 @@ const Heading = styled.h3`
 
 export function Filters(): JSX.Element {
 	const { allFilters = [] } = filtersStore(e => e)
-	const { addFilter } = useFilters()
 
 	return (
 		<aside>
