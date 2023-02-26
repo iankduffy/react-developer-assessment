@@ -29,8 +29,6 @@ createServer({
       const allAuthors = await getAllAuthors(data.posts)
       const allCategories = await getAllCategories(data.posts)
 
-      // console.log(allCategories)
-
       const filters = [{
         name: 'Categories', 
         items: allCategories

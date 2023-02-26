@@ -1,5 +1,4 @@
 // We need a api root to get all authors and all categories
-import { useFilters } from 'hooks/use-filters'
 import { filtersStore } from 'store/filters'
 import styled from 'styled-components'
 import { Checkbox } from './checkbox'

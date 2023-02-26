@@ -25,7 +25,7 @@ export function Listing(): JSX.Element {
   useEffect(() => {
     getPosts(searchParams)
     getAllFilters()
-  }, [])
+  })
 
   return (
     <Container>

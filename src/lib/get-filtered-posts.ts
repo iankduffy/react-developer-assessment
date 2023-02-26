@@ -6,7 +6,7 @@ interface FilteredPost {
   posts: PostType[]
 }
 
-export const getFilteredPosts = ({categories, authors, posts}: FilteredPost) => {
+export const getFilteredPosts = ({categories, authors, posts}: FilteredPost): PostType[] => {
   const selectedAuthors = authors?.split(',') || []
   const filteredByAuthor = posts.filter(post => {
     if (!selectedAuthors.length) return posts

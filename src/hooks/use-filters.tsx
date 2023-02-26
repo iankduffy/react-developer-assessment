@@ -1,6 +1,17 @@
 import { postStore } from "store/posts";
 
-export const useFilters = () => {
+interface FilterProps {
+  type: string
+  value: string
+}
+
+interface UseFilterType {
+  addFilter: (arg0: FilterProps) => void
+  removeFilter: (arg0: FilterProps) => void
+  isFiltered: (arg0: FilterProps) => boolean
+}
+
+export const useFilters = (): UseFilterType => {
   const { getPosts } = postStore(e => e)
 
   const addFilter = ({type, value} : {type: string, value: string}) => {

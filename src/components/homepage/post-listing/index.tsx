@@ -2,7 +2,7 @@ import { PostStore, postStore } from 'store/posts'
 import { Post } from '../post'
 import { NotFound } from './not-found'
 
-export function PostListing () {
+export function PostListing (): JSX.Element {
   const { posts = [] } = postStore<PostStore>((e) => e)
 
   if (!posts.length) {

@@ -1,5 +1,4 @@
 import styled from 'styled-components'
-import logo from 'public/logo.svg'
 
 const HeaderDiv = styled.header`
 	background: #f8fafc;
@@ -16,13 +15,12 @@ const Container = styled.div`
 `
 
 export function Header(): JSX.Element {
-	// console.log(logo)
 	return (
 		<HeaderDiv>
 			<Container>
 				<div> Logo </div>
 				<nav>Fake Navigation</nav>
-				<div>Github Link</div>
+				<div>CTA Link</div>
 			</Container>
 		</HeaderDiv>
 	)
