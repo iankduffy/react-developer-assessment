@@ -6,8 +6,19 @@ The repo set up didnt work with latest version of Node so I had to use nvm and n
 
 First time using styled components, compared to using tailwind, CSS modules or SCSS 
 
-  - Working out typescript and styled components took some time, but I know understand the concept. 
+### State Mangagement 
 
-  Notes of the state managerment
+I decided to use Zustand for state management, which I not used before but definitiy enjoyed using for this task. 
 
-  notes on what I would have done differently. 
+
+### What I do Differently 
+
+- Would of done TDD from the start based on the specs in the readme
+- Used SCSS / CSS modules as I not used styled components before (enjoyed trying learning it)
+- Structure the Zustand Stores better (Zustand is a new statemanagment to me)
+
+### Feedback 
+
+- Task doesn't current boot on Node 18 which casued issues on my laptop 
+- React Routers has changed with every version so developers might struggle with this (I done nextjs for 5 years so not needed it)
+- Offered variantious of designs to build this task would help
