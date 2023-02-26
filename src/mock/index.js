@@ -25,6 +25,16 @@ createServer({
       return postsResponse;
     });
 
+    this.get('/post/:postId', async(schema, request) => {
+      const {postId} = request.params
+
+      const postData =  data.posts.find(post => {
+        return post.id === postId
+      })
+
+      return postData
+    })
+
     this.get('/posts/filterableAttributes', async () => {
       const allAuthors = await getAllAuthors(data.posts)
       const allCategories = await getAllCategories(data.posts)

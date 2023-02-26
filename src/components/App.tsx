@@ -1,11 +1,10 @@
 import { Home } from "./homepage";
 import { Layout } from "./shared/layout";
+import { PostPage } from "./post-page";
 
 import {
   createBrowserRouter,
   RouterProvider,
-  Route,
-  Link,
 } from "react-router-dom";
 
 const router = createBrowserRouter([ 
@@ -17,7 +16,13 @@ const router = createBrowserRouter([
   },
   {
     path: "/post/:id",
-    element: <div>About</div>,
+    element: <PostPage/>,
+    loader: async ({ params }) => {
+      const response = await fetch(`/api/post/${params.id}`)
+      const postData = await response.json()
+
+      return postData ? postData : null
+    },
   },
 ])
 

@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom'
 import styled from 'styled-components'
 
 const HeaderDiv = styled.header`
@@ -19,7 +20,6 @@ export function Header(): JSX.Element {
 		<HeaderDiv>
 			<Container>
 				<div> Logo </div>
-				<nav>Fake Navigation</nav>
 				<div>CTA Link</div>
 			</Container>
 		</HeaderDiv>

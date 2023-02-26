@@ -2,12 +2,12 @@ export interface PostType {
   id: string
   title: string
   publishDate: string
-  author: Author
+  author: AuthorType
   summary: string
   categories: Categories[]
 }
 
-interface Author {
+export interface AuthorType {
   name: string
   avatar: string // Url
 }

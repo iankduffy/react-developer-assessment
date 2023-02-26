@@ -33,7 +33,7 @@ export function Filters(): JSX.Element {
 							{items.map((item, key) => {
 								
 								return (
-									<Checkbox filterType={filters.name.toString()} value={item} />
+									<Checkbox key={key} filterType={filters.name.toString()} value={item} />
 								)
 							})}
 						</Filter>
