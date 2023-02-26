@@ -6,6 +6,7 @@ import styled from 'styled-components'
 const List = styled.ul`
   display: grid; 
   gap: 10px;
+  padding-inline-start: 0;
 `
 
 export function PostListing (): JSX.Element {

@@ -1,4 +1,4 @@
-import { AuthorType, PostType } from "types/post";
+import { AuthorType } from "types/post";
 import styled from "styled-components";
 
 const AuthorContainer = styled.div`

@@ -6,6 +6,8 @@ const List = styled.ul`
   display: flex;
   gap: 10px;
   justify-content: center;
+  padding-inline-start: 0;
+  flex-wrap: wrap;
 `
 
 const ListItem = styled.li`
@@ -14,7 +16,6 @@ const ListItem = styled.li`
 `
 
 export function CategoresList ({categories}: {categories: PostType['categories']}): JSX.Element {
-  console.log(categories)
   return <List>
     {categories.map(cat => {
       return (

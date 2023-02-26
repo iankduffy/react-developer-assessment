@@ -11,7 +11,6 @@ const Section = styled.section`
 
 export function TitleSection ({title, author, publishDate, categories}: PostType): JSX.Element {
   const formattedDate = new Date(publishDate).toLocaleDateString('en-GB', { year: 'numeric', month: 'long', day: 'numeric' })
-  console.log({author})
   return (
     <Section>
       <h1>{title}</h1>

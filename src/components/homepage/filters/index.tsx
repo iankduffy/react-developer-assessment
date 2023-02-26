@@ -4,9 +4,9 @@ import styled from 'styled-components'
 import { Checkbox } from './checkbox'
 
 const FiltersForm = styled.form`
-	display: flex; 
-	flex-direction: column; 
-	gap: 20px;
+		display: flex; 
+		flex-direction: column; 
+		gap: 20px;
 `
 
 const Filter = styled.div`
