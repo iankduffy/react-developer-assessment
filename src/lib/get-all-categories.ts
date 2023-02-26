@@ -1,9 +1,7 @@
-// Todo: Fix this typescript issue, we need to create a post type
 
-// eslint-disable-next-line @typescript-eslint/ban-ts-comment
-// @ts-nocheck
-// eslint-disable-next-line @typescript-eslint/explicit-module-boundary-types
-export const getAllCategories = async (posts:  Record<string, unknown>[]) => {
+import { PostType } from "types/post"
+
+export const getAllCategories = async (posts:  PostType[]): Promise<string[]>  => {
   const categories = posts.map((post, index) => {
     const postCat = post['categories']
     const catNames = postCat.map(cat => cat.name)
@@ -15,6 +13,8 @@ export const getAllCategories = async (posts:  Record<string, unknown>[]) => {
   const removeDub = flattened.filter((cat, index) => {
     return flattened.indexOf(cat) === index
   })
+
+  console.log(removeDub)
 
   return removeDub
 }

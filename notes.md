@@ -13,19 +13,17 @@ these would interact with the api and the front end to get posts and filters to 
 
 ### Hooks
 
-Added two hooks usePagination and useFilters, these interacted with the stores and the url to add params to url for peristences
+Added two hooks usePagination and useFilters, these interacted with the stores and the url to add params to url for peristences, these can be found in `/hooks`
 
 ### API 
 
 Made changes to the API for the logic for pagniation and categories, this could also have been filtered on the client side app. 
 Add two new routes to get post by ID and get filters. 
 
-### 
-
 ### What I do Differently 
 
 - Would of done TDD from the start based on the specs in the readme
-- Used SCSS / CSS modules as I not used styled components before (enjoyed trying learning it)
+- Used SCSS / CSS modules as I not used styled components before (enjoyed trying / learning them)
 - Structure the Zustand Stores better (Zustand is a new statemanagment to me)
 - If I was using styled components I would have created a few reusuable ones ie Flex and Grid
 - Using React Router I could of fetch inital data there (similar how I did for the post page) rather than useEffect
@@ -35,5 +33,5 @@ Add two new routes to get post by ID and get filters.
 
 - Task doesn't current boot on Node 18 which casued issues originally to start up. 
 - React Routers has changed with every version so developers might struggle with this (I done nextjs for 5 years so not needed it). 
-- Offered variantious of designs to build this task would help. 
-- Really enjoyed the task as it was unique and let me learned new stuff - however did become big task. 
+- Offered variantious of designs / wireframes to build this task would help.
+- Really enjoyed the task as it was unique and let me learned new stuff - however did become big task.

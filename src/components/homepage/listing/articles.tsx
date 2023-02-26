@@ -8,7 +8,6 @@ const Flex = styled.div`
   align-items: center; 
 `
 
-// Todo: add types
 export function ArticleListing (): JSX.Element {
 
   return (
