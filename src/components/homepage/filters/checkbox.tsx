@@ -1,5 +1,5 @@
 import { useFilters } from 'hooks/use-filters'
-import { ChangeEvent } from 'react'
+import type { ChangeEvent } from 'react'
 
 interface Props {
   filterType: string 
